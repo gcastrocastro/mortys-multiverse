@@ -2,6 +2,10 @@ import {Link} from 'react-router-dom';
 
 export default function NavBar(){
     return(
-        <h1>NavBar</h1>
+        <nav>
+            <Link to ="/characters"> Explore all characters </Link>
+            &nbsp; | &nbsp;
+            <Link to ="/favorites"> Your Favorites </Link>
+        </nav>
     )
 }
