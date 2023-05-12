@@ -1,5 +1,5 @@
 //require dependencies
-const express = require(express);
+const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 
@@ -9,6 +9,8 @@ const app = express();
 //configure settings
 
 //mount middleware
+app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, 'build')));
 
 //mount routes
 
@@ -18,7 +20,7 @@ app.get('/*', (req, res) => {
 })
 
 //tell app to listen
-const port = PROCESS.env.PORT || 3001;
+const port = process.env.PORT || 3001;
 app.listen(port, function() {
     console.log(`Express app is listening on port: ${port}`);
 })
