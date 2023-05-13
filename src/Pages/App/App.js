@@ -7,7 +7,8 @@ import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import AuthPage from '../AuthPage/AuthPage';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
+
   return (
     <div className="App">  
       { user ?
