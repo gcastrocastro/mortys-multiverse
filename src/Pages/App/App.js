@@ -5,6 +5,7 @@ import NavBar from '../../Components/NavBar/NavBar';
 import AllCharacters from '../AllCharacters/AllCharacters';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import AuthPage from '../AuthPage/AuthPage';
+import CharacterDetailPage from '../CharacterDetailPage/CharacterDetailPage';
 
 function App() {
   const [user, setUser] = useState({});
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/characters" element={<AllCharacters/>} />
             <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/characters/:id" element={<CharacterDetailPage />} />
           </Routes>
         </>
         :
