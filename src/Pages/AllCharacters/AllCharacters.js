@@ -2,13 +2,19 @@ import {useState, useEffect} from 'react';
 
 export default function AllCharacters({apiUrl}) {
     const [characters, setCharacters] = useState([]);
+    const apiUrlChars = 'https://rickandmortyapi.com/api/character';
 
     async function fetchCharacters() {
         try {
-            const response = await fetch('https://rickandmortyapi.com/api/character');
-            const characterData = await response.json();
-            console.log(characterData.results);
-            setCharacters(characterData.results);
+            const response = await fetch(apiUrlChars);
+            const apiData = await response.json();
+            let allCharacters = [];
+            for (let page_num = 1; page_num < apiData.info.pages; page_num++){
+                const response = await fetch(apiUrlChars + '?page=' + page_num);
+                const apiData = await response.json();
+                allCharacters = [...allCharacters, ...apiData.results];
+            }
+            setCharacters(allCharacters);
 
         } catch (error) {
             console.log(error);
