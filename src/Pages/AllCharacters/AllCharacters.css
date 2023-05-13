@@ -1,0 +1,33 @@
+.character-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.character-card{
+    overflow: hidden;
+    position:relative;
+}
+
+.character-info{
+    background-color:#373B69;
+    color:#8790de;
+    max-height:100%;
+    /* overflow: scroll; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+}
+
+.character-card:hover .character-info{
+    transform: translateY(0);
+}
