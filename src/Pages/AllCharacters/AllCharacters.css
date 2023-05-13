@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Darumadrop+One&family=Nanum+Pen+Script&family=Pangolin&display=swap');
+
 .character-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -6,7 +8,7 @@
   margin-left: 20%;
   max-width: 1200px;
   padding: 1rem;
-  background-color: rgb(114, 109, 109);
+  background-color: black;
 }
 
 .favorite-icon {
@@ -27,11 +29,13 @@
 }
 
 .character-info a {
+    font-family: 'Pangolin', cursive;
     font-size: 1.3rem;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color:rgb(230, 226, 41);
     letter-spacing: 1px;
     background-color:rgb(162,222,214);
+    text-decoration: none;
     max-height:100%;
     position: absolute;
     top: 0;
