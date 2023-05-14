@@ -1,5 +1,5 @@
 import {Routes, Route} from 'react-router-dom';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import './App.css';
 import NavBar from '../../Components/NavBar/NavBar';
 import AllCharacters from '../AllCharacters/AllCharacters';
@@ -9,6 +9,7 @@ import CharacterDetailPage from '../CharacterDetailPage/CharacterDetailPage';
 
 function App() {
   const [user, setUser] = useState({});
+  const [favorites, setFavorites] = useState([]);
 
   return (
     <div className="App">  
@@ -16,8 +17,8 @@ function App() {
         <>
           <NavBar/>
           <Routes>
-            <Route path="/characters" element={<AllCharacters/>} />
-            <Route path="/favorites" element={<FavoritesPage />} />
+            <Route path="/characters" element={<AllCharacters favorites={favorites} setFavorites={setFavorites} />} />
+            <Route path="/favorites" element={<FavoritesPage favorites={favorites} setFavorites={setFavorites} />} />
             <Route path="/characters/:id" element={<CharacterDetailPage />} />
           </Routes>
         </>
