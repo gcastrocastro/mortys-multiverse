@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './AllCharacters.css';
-import 'boxicons';
+import HeartIcon from '../../Components/HeartIcon/HeartIcon';
 
-export default function AllCharacters() {
+export default function AllCharacters({favorites, setFavorites}) {
     const [characters, setCharacters] = useState([]);
     const apiUrlChars = 'https://rickandmortyapi.com/api/character';
 
@@ -32,15 +32,13 @@ export default function AllCharacters() {
         <section className='character-container'>
             {characters.map(char => {
                 return(
-                    <div className='character-card'>
+                    <div className='character-card' key={char.id}>
                         <div className="favorite-icon">
-                            <Link to={`/favorites`}>
-                              <box-icon name='heart'></box-icon>
-                            </Link>
+                            <HeartIcon id={char.id} favorites={favorites} setFavorites={setFavorites}/>
                         </div>
                         <img src={char.image} alt={char.name}/>
                         <div className='character-info'>
-                            <Link to={`/characters/${char.id}`} key={char.id}>
+                            <Link to={`/characters/${char.id}`}>
                                 <h2>{char.name}</h2>
                                 <h4>Species: {char.species}</h4>
                                 <h4>Origin: {char.origin.name}</h4>
