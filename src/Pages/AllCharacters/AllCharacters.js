@@ -5,27 +5,26 @@ import HeartIcon from '../../Components/HeartIcon/HeartIcon';
 
 export default function AllCharacters({favorites, setFavorites}) {
     const [characters, setCharacters] = useState([]);
-    const apiUrlChars = 'https://rickandmortyapi.com/api/character';
+    const apiUrl = 'https://rickandmortyapi.com/api/character';
 
     async function fetchCharacters() {
         try {
-            const response = await fetch(apiUrlChars);
+            const response = await fetch(apiUrl);
             const apiData = await response.json();
             let allCharacters = [];
             for (let page_num = 1; page_num < apiData.info.pages; page_num++){
-                const response = await fetch(apiUrlChars + '?page=' + page_num);
+                const response = await fetch(apiUrl + '?page=' + page_num);
                 const apiData = await response.json();
                 allCharacters = [...allCharacters, ...apiData.results];
             }
             setCharacters(allCharacters);
-
         } catch (error) {
             console.log(error);
         }
     }
 
     useEffect(() => {
-        fetchCharacters()
+        fetchCharacters();
     }, []);
 
     return(
