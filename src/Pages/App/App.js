@@ -6,9 +6,10 @@ import AllCharacters from '../AllCharacters/AllCharacters';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import AuthPage from '../AuthPage/AuthPage';
 import CharacterDetailPage from '../CharacterDetailPage/CharacterDetailPage';
+import {getUser} from '../../utilities/users-service';
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(getUser());
   const [favorites, setFavorites] = useState([]);
 
   return (
@@ -23,7 +24,7 @@ function App() {
           </Routes>
         </>
         :
-        <AuthPage path="/"/>
+        <AuthPage path="/" setUser={setUser}/>
       }
     </div>
   );
