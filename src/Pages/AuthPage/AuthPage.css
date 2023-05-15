@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,300&display=swap');
+
+@font-face {
+    font-family: 'Get Swifty';
+    src: url('../../../public/get_schwifty.ttf') format('truetype');
+}
+
+* {
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+}
+
+.auth-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+    min-height: 100vh;
+}
+
+.auth-container h1{
+    font-family: 'Get Swifty';
+    font-size: 4rem;
+    color: #0aacc3;
+    text-shadow: -1px 0 #aeed9e, 0 1px #aeed9e, 1px 0 #aeed9e, 0 -1px #aeed9e, 5px 5px 20px #4c9635;
+}
+
+.auth-container button {
+  cursor: pointer;
+  display: block;
+  font-size:16px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px; 
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%; 
+  background: #0aacc3;
+  border: transparent;
+  margin-top: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 100;
+  position: relative;
+  border-radius: 10px;
+}
+
+.auth-container button svg {
+  height: 45px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.auth-container button rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 422, 0;
+  transition: all 0.35s linear;
+}
+
+.auth-container button:hover {
+  background: #0aacc3;
+  font-weight: 900;
+}
+
+.auth-container button:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 15, 310;
+  stroke-dashoffset: 48;
+  transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.auth-container img {
+    border-radius: 100%;
+    width: 400px;
+    height: auto;
+}
