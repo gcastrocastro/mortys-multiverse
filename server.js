@@ -7,12 +7,16 @@ const logger = require('morgan');
 const app = express();
 
 //configure settings
+require('dotenv').config();
+require('./config/database');
 
 //mount middleware
+app.use(express.json());
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'build')));
 
 //mount routes
+app.use('/api/users', require('./routes/api/users'));
 
 //catch-all route
 app.get('/*', (req, res) => {
