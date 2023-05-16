@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Darumadrop+One&family=Nanum+Pen+Script&family=Pangolin&display=swap');
+
+.favorite-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.character-status{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-radius: 10px;
+  font-family: 'Pangolin', cursive;
+  width: 6rem;
+  height: 2rem;
+  padding: .5rem;
+  text-align: center;
+  color: white;
+}
+
+.character-card{
+    border: 1px solid white;
+    overflow: hidden;
+    position:relative;
+    z-index: 1;
+}
+
+.character-card img {
+    width: 100%;
+}
+
+.character-info a {
+    font-family: 'Pangolin', cursive;
+    font-size: 1.3rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color:rgb(230, 226, 41);
+    letter-spacing: 1px;
+    background-color:rgb(162,222,214);
+    text-decoration: none;
+    max-height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: .5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+}
+
+.character-card:hover .character-info a{
+    transform: translateY(0);
+}
