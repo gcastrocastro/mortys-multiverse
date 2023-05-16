@@ -13,7 +13,6 @@ export default function HeartIcon({id, user, favorites, setFavorites}) {
         let userId = user._id;
         const faves = await addFavorite(id, userId);
         let updatedFavorites = [...favorites];
-
         updatedFavorites = updatedFavorites.filter(fave => fave !== id);
 
         for (let i = 0; i < faves.length; i++) {

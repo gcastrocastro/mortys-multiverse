@@ -45,6 +45,7 @@ async function addFavorite(req, res){
         await user.save();
         res.json(user.favorites);
     } catch(error){
+        console.log(error);
         res.status(400).json(error);
     }
 }
