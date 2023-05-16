@@ -1,22 +1,30 @@
 import {useState, useEffect} from 'react';
 import 'boxicons';
+import {addFavorite} from '../../utilities/users-service';
 
-export default function HeartIcon({id, favorites, setFavorites}) {
+export default function HeartIcon({id, user, favorites, setFavorites}) {
     const [heart, setHeart] = useState(false);
 
     useEffect(() => {
         setHeart(favorites.includes(id));
     }, [favorites]);
 
-    function submitFavorite() {
-        let isFavorite = favorites.includes(id);
-        setFavorites(prevFavorites => {
-            if (isFavorite) {
-                return prevFavorites.filter(fave => fave !== id);
-            } else {
-                return [...prevFavorites, id]
+    async function submitFavorite(user, id) {
+        let userId = user._id;
+        const faves = await addFavorite(id, userId);
+        let updatedFavorites = [...favorites];
+
+        updatedFavorites = updatedFavorites.filter(fave => fave !== id);
+
+        for (let i = 0; i < faves.length; i++) {
+            const favoriteId = faves[i].id;
+            const isFavorite = updatedFavorites.includes(favoriteId);
+        
+            if (!isFavorite) {
+              updatedFavorites.push(favoriteId);
             }
-        });
+          }
+      setFavorites(updatedFavorites);
     }
 
     const boxIcon = heart ? (
@@ -26,7 +34,7 @@ export default function HeartIcon({id, favorites, setFavorites}) {
     );
 
     return (
-        <div onClick={submitFavorite} key={id}>
+        <div onClick={() => submitFavorite(user, id)} key={id}>
             {boxIcon}
         </div> 
     )

@@ -20,7 +20,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 3,
-    }
+    },
+    favorites: [{
+        id: {
+        type: Number,
+        unique: true
+        }
+    }]   
 }, {
     timestamps: true,
     toJSON: {

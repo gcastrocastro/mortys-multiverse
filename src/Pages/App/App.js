@@ -13,12 +13,12 @@ function App() {
   const [favorites, setFavorites] = useState([]);
 
   return (
-    <div className="App">  
+    <div className="App">
       { user ?
         <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/characters" element={<AllCharacters favorites={favorites} setFavorites={setFavorites} />} />
+            <Route path="/characters" element={<AllCharacters user={user} favorites={favorites} setFavorites={setFavorites} />} />
             <Route path="/favorites" element={<FavoritesPage favorites={favorites} setFavorites={setFavorites} />} />
             <Route path="/characters/:id" element={<CharacterDetailPage />} />
           </Routes>

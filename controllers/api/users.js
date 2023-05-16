@@ -5,7 +5,9 @@ const bcrypt = require('bcrypt');
 module.exports = {
     create,
     login,
-    checkToken
+    checkToken,
+    addFavorite,
+    getFavorites
 }
 
 async function create(req, res){
@@ -20,6 +22,31 @@ async function create(req, res){
 
 function createJWT(user) {
     return jwt.sign({user}, process.env.SECRET, {expiresIn: '24h'})
+}
+
+async function getFavorites(req, res) {
+    try {
+        const user = await User.findById(req.query.userId);
+        res.json(user.favorites);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+}
+
+async function addFavorite(req, res){
+    try{
+        const user = await User.findById(req.body.userId);
+        const existingFavoriteIndex = user.favorites.findIndex(favorite => favorite.id === req.body.id);
+        if (existingFavoriteIndex !== -1) {
+          user.favorites.splice(existingFavoriteIndex, 1);
+        } else {
+          user.favorites.push({ id: req.body.id });
+        }
+        await user.save();
+        res.json(user.favorites);
+    } catch(error){
+        res.status(400).json(error);
+    }
 }
 
 async function login(req, res){

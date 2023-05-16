@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './AllCharacters.css';
 import HeartIcon from '../../Components/HeartIcon/HeartIcon';
+import {getFavorites} from '../../utilities/users-service';
 
-export default function AllCharacters({favorites, setFavorites}) {
+export default function AllCharacters({user, favorites, setFavorites}) {
     const [characters, setCharacters] = useState([]);
     const apiUrl = 'https://rickandmortyapi.com/api/character';
 
@@ -23,8 +24,20 @@ export default function AllCharacters({favorites, setFavorites}) {
         }
     }
 
+    async function getFavesForHearts(user) {
+        let userId = user._id;
+        const favesForHearts = await getFavorites(userId);
+        const keyIds = [];
+        for (let i = 0; i < favesForHearts.length; i++) {
+            const keyid = favesForHearts[i].id;
+            keyIds.push(keyid);
+        }
+        setFavorites(keyIds);
+    }
+
     useEffect(() => {
         fetchCharacters();
+        getFavesForHearts(user);
     }, []);
 
     return(
@@ -33,7 +46,7 @@ export default function AllCharacters({favorites, setFavorites}) {
                 return(
                     <div className='character-card' key={char.id}>
                         <div className="favorite-icon">
-                            <HeartIcon id={char.id} favorites={favorites} setFavorites={setFavorites}/>
+                            <HeartIcon id={char.id} user={user} favorites={favorites} setFavorites={setFavorites}/>
                         </div>
                         <img src={char.image} alt={char.name}/>
                         <div className='character-info'>

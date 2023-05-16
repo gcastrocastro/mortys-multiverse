@@ -1,4 +1,4 @@
-import * as userAPI from './users-api'; //imports all functionality from this file as a variable
+import * as userAPI from './users-api';
 
 export function logOut() {
     localStorage.removeItem('token');
@@ -16,25 +16,29 @@ export async function login(credentials){
     return getUser();
 }
 
+export async function addFavorite(id, userId){
+    const favorites = await userAPI.addFavorite(id, userId);
+    return favorites;
+}
+
+export async function getFavorites(userId){
+    const favorites = await userAPI.getFavorites(userId);
+    return favorites;
+}
+
 export function getToken() {
-    //attempt to get token from localstorage
     const token = localStorage.getItem('token');
-    //this can be null when user hasn't logged in before 
     if (!token) return null;
-    // if token is retrieved, 
-        //decode the payload from token so we can check if it's still valid (or expired)
     const payload = JSON.parse(atob(token.split('.')[1]));
     if (payload.exp < Date.now() / 1000){
-        //if not valid, we remove the token
         localStorage.removeItem('token');
         return null;
-    } 
-    // else return token
+    }
     return token;
 }
 
 export function checkToken() {
-    return userAPI.checkToken() //returns promise
+    return userAPI.checkToken()
     .then(dateStr => new Date(dateStr));
 }
 
