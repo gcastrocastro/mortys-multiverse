@@ -1,8 +1,7 @@
-import HeartIcon from "../../Components/HeartIcon/HeartIcon";
-import {Link} from 'react-router-dom';
 import { useEffect, useState } from "react";
+import CharacterCard from "../../Components/CharacterCard/CharacterCard";
 
-export default function FavoritesPage({favorites, setFavorites}) {
+export default function FavoritesPage({user, favorites, setFavorites}) {
     const [currentFavorites, setCurrentFavorites] = useState([]);
 
     async function fetchFavorites() {
@@ -23,20 +22,7 @@ export default function FavoritesPage({favorites, setFavorites}) {
         <section className='character-container'>
             {currentFavorites.map(char => {
                 return(
-                    <div className='character-card' key={char.id}>
-                        <div className="favorite-icon">
-                            <HeartIcon id={char.id} favorites={favorites} setFavorites={setFavorites}/>
-                        </div>
-                        <img src={char.image} alt={char.name}/>
-                        <div className='character-info'>
-                            <Link to={`/characters/${char.id}`}>
-                                <h2>{char.name}</h2>
-                                <h4>Species: {char.species}</h4>
-                                <h4>Origin: {char.origin.name}</h4>
-                                <h4>Most Recent Location: {char.location.name}</h4>
-                            </Link>
-                        </div>
-                    </div>
+                    <CharacterCard key={char.id} char={char} user={user} favorites={favorites} setFavorites={setFavorites}/>
                 )
             })}
         </section>
