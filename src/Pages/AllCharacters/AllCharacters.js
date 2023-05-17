@@ -40,16 +40,32 @@ export default function AllCharacters({user, favorites, setFavorites}) {
         getFavesForHearts(user);
     }, []);
 
+    const loaded = () => {
+        return (
+            <>
+            <ParticleBackground/>
+            <section className='character-container'>
+                {characters.map(char => {
+                    return(
+                        <CharacterCard key={char.id} user={user} char={char} favorites={favorites} setFavorites={setFavorites}/>
+                    )
+                })}
+            </section>
+            </>
+        )
+    }
+
+    const loading = () => {
+        return (
+            <div className="loading-container">
+                <ParticleBackground/>
+                <img className="loading-img" src="https://i.vimeocdn.com/video/714420464-f196a6e7c9e848632ed8d433cfd4b5ec973eadc122b85900d76a04211a3544a2-d" alt="morty-logo"/>
+                <h1>Loading Characters...</h1>
+            </div>
+        )
+    }
+
     return(
-        <>
-        <ParticleBackground/>
-        <section className='character-container'>
-            {characters.map(char => {
-                return(
-                    <CharacterCard key={char.id} user={user} char={char} favorites={favorites} setFavorites={setFavorites}/>
-                )
-            })}
-        </section>
-        </>
+        characters.length !==0 ? loaded() : loading()
     )
 }

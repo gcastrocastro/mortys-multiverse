@@ -7,7 +7,7 @@ export default function HomePage() {
         const lastEpisodeDate = new Date('2022-10-03');
         let today = new Date();
         const timeDiff = Math.abs(today.getTime() - lastEpisodeDate.getTime());
-        var daysPassed = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        var daysPassed = Math.floor(timeDiff / (1000 * 3600 * 24));
         return daysPassed;
       }
 
