@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import './CharacterDetailPage.css';
 
 export default function CharacterDetailPage(props) {
     const {id} = useParams();
     const url = `https://rickandmortyapi.com/api/character/${id}`
     const [character, setCharacter] = useState([]);
+    const [episodes, setEpisodes] = useState([]);
 
     async function fetchCharacter() {
         try {
@@ -16,20 +18,41 @@ export default function CharacterDetailPage(props) {
         }
     }
 
+    function getEpisodes(character) {
+        let episodes = [];
+        episodes = character.episode.map((episode) => 
+        episode.split('/')[5]);
+        setEpisodes(episodes);
+    }
+
     useEffect(() => {
         fetchCharacter();
     },[])
 
+    useEffect(() => {
+        if (character.length !== 0){
+            getEpisodes(character);
+        }
+    }, [character]);
+
     return(
-        <main>
-            <div>
+        <main className='character-detail-main'>
+            <div className="character-detail-info">
                 <img src={character.image} alt={character.name}/>
                 <h2>{character.name}</h2>
+                {character.type && <h3>Type: {character.type}</h3>}
+                <h3>Species: {character.species}</h3>
+                <h3>Gender: {character.gender}</h3>
             </div>
-            <div>
-                <h3>{character.status}</h3>
-                <h3>{character.species}</h3>
-                <h3>{character.gender}</h3>
+            <div className="episode-container">
+                <h2>Episodes This Character Appears In:</h2>
+                <div className="character-episodes">
+                    {episodes.map( episode => {
+                        return (
+                            <div key={episode}> Episode {episode}</div>
+                        )
+                    })}
+                </div>
             </div>
         </main>
     )
