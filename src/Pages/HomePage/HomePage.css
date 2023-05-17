@@ -1,3 +1,30 @@
+.homepage-container{
+    height: 100vh;
+    position: relative;
+}
+
 .homepage-container h1{
+    color: white;
+    margin-left: 100px;
+}
+
+.robot-container {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    color: white;
+}
+
+.robot-container img{
+    height: 300px;
+    width: auto;
+    border-radius: 20px;
+}
+
+.stats{
+    margin-top: 15%;
+}
+
+.stats h2{
     color: white;
 }

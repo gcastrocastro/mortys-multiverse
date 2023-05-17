@@ -21,7 +21,7 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage user={user} />} />
             <Route path="/characters" element={<AllCharacters user={user} favorites={favorites} setFavorites={setFavorites} />} />
             <Route path="/favorites" element={<FavoritesPage user={user} favorites={favorites} setFavorites={setFavorites} />} />
             <Route path="/episodes" element={<EpisodesPage/>} />
