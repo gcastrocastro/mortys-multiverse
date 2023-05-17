@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import './CharacterDetailPage.css';
 import ParticlesBackground from '../../Components/Particles/Particles';
 
-export default function CharacterDetailPage(props) {
+export default function CharacterDetailPage() {
     const {id} = useParams();
     const url = `https://rickandmortyapi.com/api/character/${id}`
     const [character, setCharacter] = useState([]);
