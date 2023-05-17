@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import CharacterCard from '../../Components/CharacterCard/CharacterCard';
+import ParticleBackground from '../../Components/Particles/Particles';
+import './EpisodeDetailPage.css';
 
 export default function EpisodeDetailPage({user, favorites, setFavorites}) {
     const { id } = useParams();
@@ -49,10 +51,11 @@ export default function EpisodeDetailPage({user, favorites, setFavorites}) {
 
     return (
         <main>
+            <ParticleBackground/>
             <div className="episode-info">
                 <h1>{episode.episode}</h1>
                 <h1>{episode.name}</h1>
-                <h2>{episode.air_date}</h2>
+                <h2>Aired On: {episode.air_date}</h2>
             </div>
             <div className="character-container">
                 {episodeCharacters.map(episodechar => {

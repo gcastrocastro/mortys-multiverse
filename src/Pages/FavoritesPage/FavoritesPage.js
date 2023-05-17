@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CharacterCard from "../../Components/CharacterCard/CharacterCard";
+import ParticleBackground from "../../Components/Particles/Particles";
 
 export default function FavoritesPage({user, favorites, setFavorites}) {
     const [currentFavorites, setCurrentFavorites] = useState([]);
@@ -19,6 +20,8 @@ export default function FavoritesPage({user, favorites, setFavorites}) {
     }, [favorites]);
 
     return(
+        <>
+        <ParticleBackground/>
         <section className='character-container'>
             {currentFavorites.map(char => {
                 return(
@@ -26,5 +29,6 @@ export default function FavoritesPage({user, favorites, setFavorites}) {
                 )
             })}
         </section>
+        </>
     )
 }

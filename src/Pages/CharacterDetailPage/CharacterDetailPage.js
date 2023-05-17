@@ -33,6 +33,7 @@ export default function CharacterDetailPage() {
 
     useEffect(() => {
         if (character.length !== 0){
+            console.log(character);
             getEpisodes(character);
         }
     }, [character]);

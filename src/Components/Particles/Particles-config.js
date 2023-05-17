@@ -561,7 +561,7 @@ const ParticlesConfig = {
   "pauseOnBlur": true,
   "pauseOnOutsideViewport": true,
   "responsive": [],
-  "smooth": false,
+  "smooth": true,
   "style": {},
   "themes": [],
   "zLayers": 100,

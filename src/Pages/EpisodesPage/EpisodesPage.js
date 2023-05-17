@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import EpisodeCard from '../../Components/EpisodeCard/EpisodeCard';
 import './EpisodesPage.css';
+import ParticleBackground from '../../Components/Particles/Particles';
 
 export default function EpisodesPage() {
     const [episodes, setEpisodes] = useState([]);
@@ -27,6 +28,8 @@ export default function EpisodesPage() {
     }, []);
 
     return (
+        <>
+        <ParticleBackground/>
         <section className='episode-page-container'>
             {episodes.map(episode => {
                 return(
@@ -34,5 +37,6 @@ export default function EpisodesPage() {
                 )
             })}
         </section>
+        </>
     )
 }

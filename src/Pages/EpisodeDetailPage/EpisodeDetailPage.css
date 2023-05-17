@@ -1,0 +1,8 @@
+.episode-info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color:white;
+    margin-right: 5rem;
+    gap: 50px;
+}

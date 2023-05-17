@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import './AllCharacters.css';
 import {getFavorites} from '../../utilities/users-service';
 import CharacterCard from '../../Components/CharacterCard/CharacterCard';
+import ParticleBackground from '../../Components/Particles/Particles';
 
 export default function AllCharacters({user, favorites, setFavorites}) {
     const [characters, setCharacters] = useState([]);
@@ -40,6 +41,8 @@ export default function AllCharacters({user, favorites, setFavorites}) {
     }, []);
 
     return(
+        <>
+        <ParticleBackground/>
         <section className='character-container'>
             {characters.map(char => {
                 return(
@@ -47,5 +50,6 @@ export default function AllCharacters({user, favorites, setFavorites}) {
                 )
             })}
         </section>
+        </>
     )
 }

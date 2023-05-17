@@ -42,6 +42,11 @@
     font-size: 1.2rem;
 }
 
+.character-episodes a{
+    text-decoration: none;
+    color: white;
+}
+
 .character-episodes div{
     background: linear-gradient(90deg, red, orange, yellow, purple);
     background-clip: text;

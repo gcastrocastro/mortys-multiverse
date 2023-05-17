@@ -27,7 +27,6 @@ export default function CharacterCard({user, char, favorites, setFavorites}) {
                     <h2>{char.name}</h2>
                     <h4>Species: {char.species}</h4>
                     <h4>Origin: {char.origin.name}</h4>
-                    <h4>Most Recent Location: {char.location.name}</h4>
                 </Link>
             </div>
         </div>

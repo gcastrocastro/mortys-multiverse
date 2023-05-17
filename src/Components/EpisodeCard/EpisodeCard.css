@@ -6,3 +6,8 @@
 .episode-page-container a{
     text-decoration: none;
 }
+
+.episode-card-container:hover{
+    transform:scale(1.1);
+    background-color: black;
+}
