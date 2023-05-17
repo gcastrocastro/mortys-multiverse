@@ -1,0 +1,13 @@
+.audio-container{
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    margin-bottom: 50px;
+}
+
+.audio-container h2{
+    color:white;
+}
+
