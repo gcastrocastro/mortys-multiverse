@@ -13,6 +13,7 @@ export default function NavBar({user, setUser}){
         <nav>
             {user && <Link to="/"><h2>&nbsp; Welcome, {user.name}</h2></Link>}
             <Link to ="/characters"> Explore All Characters </Link>
+            <Link to ="/episodes"> Explore All Episodes </Link>
             <Link to ="/favorites"> Your Favorites </Link>
             <Link to="/" onClick={handleLogout}>Log Out</Link>
             <AudioPlayer/>

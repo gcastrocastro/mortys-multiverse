@@ -16,7 +16,6 @@ export default function CharacterCard({user, char, favorites, setFavorites}) {
     return (
         <div className='character-card' key={char.id}>
             <span className='character-status' style={{ backgroundColor: getBackgroundColor() }}>
-                {/* <span status_icon></span> */}
                 <span>{char.status}</span>
             </span>
             <div className="favorite-icon">
