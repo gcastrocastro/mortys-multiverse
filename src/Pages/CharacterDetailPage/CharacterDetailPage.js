@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import './CharacterDetailPage.css';
+import ParticlesBackground from '../../Components/Particles/Particles';
 
 export default function CharacterDetailPage(props) {
     const {id} = useParams();
@@ -36,6 +37,8 @@ export default function CharacterDetailPage(props) {
     }, [character]);
 
     return(
+        <>
+        <ParticlesBackground />
         <main className='character-detail-main'>
             <div className="character-detail-info">
                 <img src={character.image} alt={character.name}/>
@@ -55,5 +58,6 @@ export default function CharacterDetailPage(props) {
                 </div>
             </div>
         </main>
+        </>
     )
 }
