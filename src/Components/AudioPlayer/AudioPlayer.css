@@ -1,13 +1,19 @@
 .audio-container{
     display:flex;
     flex-direction: column;
-    position: absolute;
-    bottom: 0;
-    left: 50px;
-    margin-bottom: 50px;
+    margin-top: 5px;
 }
 
 .audio-container h2{
     color:white;
+}
+
+.audio-container select{
+    font-size: 1.5rem;
+}
+
+.audio-container audio{
+    width: 250px;
+    height: 30px;
 }
 

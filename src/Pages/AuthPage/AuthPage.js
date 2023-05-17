@@ -3,7 +3,6 @@ import SignUpForm from "../../Components/SignUpForm/SignUpForm";
 import LoginForm from "../../Components/LogInForm/LogInForm";
 import ParticleBackground from '../../Components/Particles/Particles';
 import './AuthPage.css';
-import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer';
 
 export default function AuthPage({setUser}) {
     const [button, setButton] = useState(true);
@@ -16,7 +15,6 @@ export default function AuthPage({setUser}) {
         <>
         <ParticleBackground />
         <div className="auth-container">
-            <AudioPlayer/>
             <h1>Morty's Multiverse</h1>
             <img src="https://i.vimeocdn.com/video/714420464-f196a6e7c9e848632ed8d433cfd4b5ec973eadc122b85900d76a04211a3544a2-d" alt="morty-logo"/>
             { button ?

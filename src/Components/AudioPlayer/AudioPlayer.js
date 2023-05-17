@@ -15,7 +15,6 @@ export default function AudioPlayer() {
 
   return (
     <div className="audio-container">
-    <h2> Listen to your favorite <br></br> Rick and Morty songs! </h2>
       <select onChange={handleSongChange}>
         {songList.map((song) => (
           <option key={song.url} value={song.url}>
