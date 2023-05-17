@@ -27,7 +27,7 @@ export default function EpisodesPage() {
     }, []);
 
     return (
-        <section className='episode-container'>
+        <section className='episode-page-container'>
             {episodes.map(episode => {
                 return(
                     <EpisodeCard key={episode.id} episode={episode}/>

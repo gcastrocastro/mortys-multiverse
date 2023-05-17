@@ -1,7 +1,7 @@
-.episode-container{
+.episode-page-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: minmax(250px, auto);
+    grid-auto-rows: minmax(200px, auto);
     grid-gap: 1rem;
     margin-top: 0;
     margin-right: 0;

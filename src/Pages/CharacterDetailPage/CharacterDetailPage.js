@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './CharacterDetailPage.css';
 import ParticlesBackground from '../../Components/Particles/Particles';
 
@@ -52,7 +53,9 @@ export default function CharacterDetailPage() {
                 <div className="character-episodes">
                     {episodes.map( episode => {
                         return (
-                            <div key={episode}> Episode {episode}</div>
+                            <Link to={`/episodes/${episode}`}>
+                                <div key={episode}> Episode {episode}</div>
+                            </Link>
                         )
                     })}
                 </div>
