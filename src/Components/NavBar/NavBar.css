@@ -6,7 +6,7 @@ nav {
     width: 20%;
     height: 100%;
     top:0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     background: url('https://a-static.besthdwallpaper.com/rick-and-morty-in-space-wallpaper-2560x1440-89883_51.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,7 @@ nav {
 nav a {
     text-decoration: none;
     color: #fff;
-    margin: 1rem;
+    margin: .5rem;
     border: 2px solid #fff;
     transition: 1s;
 }
