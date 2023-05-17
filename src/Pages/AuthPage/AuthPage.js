@@ -12,8 +12,9 @@ export default function AuthPage({setUser}) {
     }
 
     return (
+        <>
+        <ParticleBackground />
         <div className="auth-container">
-            <ParticleBackground />
             <h1>Morty's Multiverse</h1>
             <img src="https://i.vimeocdn.com/video/714420464-f196a6e7c9e848632ed8d433cfd4b5ec973eadc122b85900d76a04211a3544a2-d" alt="morty-logo"/>
             { button ?
@@ -38,5 +39,6 @@ export default function AuthPage({setUser}) {
                 </>
             }
         </div>
+        </>
     )
 }
