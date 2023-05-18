@@ -10,7 +10,8 @@ Morty's Multiverse is a full-stack MERN application inspired by the adult TV sho
 React, MongoDB, Mongoose, Express, Node.js, Javascript, HTML5, CSS3, tsParticles, Rick and Morty API,
 
 # Getting Started
-website
+
+https://mortys-multiverse.herokuapp.com/
 
 # Next Steps
 - Add animation to the authentication page image
