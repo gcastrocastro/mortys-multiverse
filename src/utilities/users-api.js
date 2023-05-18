@@ -10,10 +10,6 @@ export function login(credentials){
     return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
 }
 
-export function checkToken(credentials){
-    return sendRequest(`${BASE_URL}/check-token`, 'GET', credentials);
-}
-
 export async function addFavorite(id, userId){
     const res = await fetch(`${BASE_URL}/add-favorite/${id}`, {
         method: 'POST', 

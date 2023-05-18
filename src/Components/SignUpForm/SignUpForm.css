@@ -6,6 +6,10 @@
     flex-direction: column;
 }
 
+.signup-container p{
+    color:white;
+}
+
 .form-container{
     display: flex;
     justify-content: center;

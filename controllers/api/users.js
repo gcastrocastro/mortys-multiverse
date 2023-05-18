@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 module.exports = {
     create,
     login,
-    checkToken,
     addFavorite,
     getFavorites
 }
@@ -64,9 +63,4 @@ async function login(req, res){
     } catch (error) {
         res.status(400).json(error);
     }
-}
-
-function checkToken(req, res) {
-    console.log(req.user);
-    res.json(req.exp);
 }
