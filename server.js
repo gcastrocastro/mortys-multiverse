@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const favicon = require ('serve-favicon');
 
 //initialize app
 const app = express();
@@ -14,6 +15,7 @@ require('./config/database');
 app.use(express.json());
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 
 //mount routes
 app.use('/api/users', require('./routes/api/users'));
