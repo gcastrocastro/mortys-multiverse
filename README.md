@@ -14,6 +14,7 @@ React, MongoDB, Mongoose, Express, Node.js, Javascript, HTML5, CSS3, tsParticles
 https://mortys-multiverse.herokuapp.com/
 
 # Next Steps
+- Add pagination to my pages to reduce lagging issues
 - Add animation to the authentication page image
 - Add more songs
 
