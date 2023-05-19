@@ -1,6 +1,6 @@
 import EpisodeCard from '../../Components/EpisodeCard/EpisodeCard';
-import './EpisodesPage.css';
 import ParticleBackground from '../../Components/Particles/Particles';
+import './EpisodesPage.css';
 
 export default function EpisodesPage({episodes}) {
     return (

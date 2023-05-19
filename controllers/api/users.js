@@ -26,7 +26,6 @@ function createJWT(user) {
 async function getFavorites(req, res) {
     try {
         const user = await User.findById(req.query.userId);
-        console.log(user.favorites);
         res.json(user.favorites);
     } catch (error) {
         res.status(400).json(error);

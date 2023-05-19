@@ -6,10 +6,6 @@
     flex-direction: column;
 }
 
-.signup-container p{
-    color:white;
-}
-
 .form-container{
     display: flex;
     justify-content: center;
@@ -27,4 +23,8 @@
 .form-container form button {
     grid-column: 1 / span 2;
     min-width: 100%;
+}
+
+.error-message{
+    color:white;
 }

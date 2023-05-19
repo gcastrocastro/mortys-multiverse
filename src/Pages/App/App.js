@@ -1,15 +1,15 @@
 import {Routes, Route} from 'react-router-dom';
 import {useEffect, useState} from 'react';
-import './App.css';
+import {getUser} from '../../utilities/users-service';
 import NavBar from '../../Components/NavBar/NavBar';
 import AllCharacters from '../AllCharacters/AllCharacters';
 import FavoritesPage from '../FavoritesPage/FavoritesPage';
 import AuthPage from '../AuthPage/AuthPage';
 import CharacterDetailPage from '../CharacterDetailPage/CharacterDetailPage';
-import {getUser} from '../../utilities/users-service';
 import HomePage from '../HomePage/HomePage';
 import EpisodesPage from '../EpisodesPage/EpisodesPage';
 import EpisodeDetailPage from '../EpisodeDetailPage/EpisodeDetailPage';
+import './App.css';
 
 function App() {
   const [user, setUser] = useState(getUser());

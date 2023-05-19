@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {Link} from 'react-router-dom';
-import './CharacterDetailPage.css';
 import ParticlesBackground from '../../Components/Particles/Particles';
+import './CharacterDetailPage.css';
 
 export default function CharacterDetailPage() {
     const {id} = useParams();
@@ -33,7 +33,6 @@ export default function CharacterDetailPage() {
 
     useEffect(() => {
         if (character.length !== 0){
-            console.log(character);
             getEpisodes(character);
         }
     }, [character]);

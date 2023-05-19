@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
-import ParticleBackground from "../../Components/Particles/Particles"
 import { getFavorites } from '../../utilities/users-service';
+import ParticleBackground from "../../Components/Particles/Particles"
 import './HomePage.css';
 
 export default function HomePage({user, episodes, characters}) {
